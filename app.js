@@ -70,14 +70,24 @@ function updateLaunchCountdown(now = Date.now()) {
   const closed = now >= launchEnd;
   panel.classList.toggle('is-open', open);
   panel.classList.toggle('is-closed', closed);
-  status.textContent = closed ? 'VENTANA FINALIZADA' : open ? 'VENTANA ABIERTA · CIERRE EN' : 'APERTURA EN';
+  const note = document.getElementById('mission-time-note');
+  const atZero = open && now - launchStart < 1000;
+  status.textContent = closed ? 'VENTANA FINALIZADA' : atZero ? 'T = 0 · APERTURA DE VENTANA' : open ? 'VENTANA ABIERTA · TIEMPO TRANSCURRIDO' : 'APERTURA EN';
+  if (note) {
+    if (closed) note.textContent = 'T de referencia: apertura de la ventana.';
+    else if (open) {
+      const left = Math.max(0,Math.ceil((launchEnd-now)/1000));
+      const remaining = [Math.floor(left/3600),Math.floor(left%3600/60),left%60].map(n=>String(n).padStart(2,'0')).join(':');
+      note.textContent = (atZero ? 'T = 0: la ventana abre ahora.' : 'T+: tiempo desde la apertura.') + ' Cierre en ' + remaining;
+    } else note.textContent = 'T−: tiempo para abrir · T = 0: apertura · T+: tiempo desde la apertura';
+  }
   if (closed) { clock.textContent = launch.nombre + ' CERRADA'; return; }
-  const seconds = Math.max(0, Math.ceil(((open ? launchEnd : launchStart) - now) / 1000));
+  const seconds = Math.max(0, open ? Math.floor((now-launchStart)/1000) : Math.ceil((launchStart-now)/1000));
   const values = [Math.floor(seconds/86400),Math.floor(seconds%86400/3600),Math.floor(seconds%3600/60),seconds%60];
   if (!clock.querySelector('.clock-unit')) {
     clock.innerHTML = '<span class="clock-prefix">T−</span>' + clockUnits.map(label => `<span class="clock-unit"><b>00</b><small>${label}</small></span>`).join('');
   }
-  clock.querySelector('.clock-prefix').textContent = open ? 'FIN−' : 'T−';
+  clock.querySelector('.clock-prefix').textContent = atZero ? 'T=0' : open ? 'T+' : 'T−';
   clock.querySelectorAll('.clock-unit b').forEach((digit,index) => { digit.textContent = String(values[index]).padStart(2,'0'); });
   clock.setAttribute('aria-label', `${values[0]} días, ${values[1]} horas, ${values[2]} minutos y ${values[3]} segundos`);
 }

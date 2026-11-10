@@ -1,10 +1,32 @@
 'use strict';
 const launch = (window.ROCKET_WINDOWS || []).find(item => item.nombre === document.body.dataset.window);
 const state = document.getElementById('window-state');
-if (launch) {
-  const now = Date.now();
-  state.textContent = now < Date.parse(launch.inicio) ? 'VENTANA PROGRAMADA' : now < Date.parse(launch.fin) ? 'VENTANA ABIERTA' : 'VENTANA FINALIZADA';
+function updateMission(now = Date.now()) {
+  if (!launch) return;
+  const start = Date.parse(launch.inicio), end = Date.parse(launch.fin);
+  const cancelled = launch.estado === 'cancelada';
+  const success = launch.estado === 'exitosa';
+  const phase = cancelled ? 'cancelled' : success ? 'success' : now < start ? 'before' : now < start+1000 ? 'zero' : now < end ? 'open' : 'closed';
+  const display = {
+    before:['T−','ANTES DE LA APERTURA','Tiempo restante para abrir la ventana'],
+    zero:['T=0','APERTURA DE VENTANA','El tiempo de misión comienza ahora'],
+    open:['T+','VENTANA ABIERTA','Tiempo transcurrido desde la apertura'],
+    closed:['◷','VENTANA CERRADA','Horario finalizado · resultado pendiente de registro'],
+    cancelled:['⊘','VENTANA CANCELADA',launch.motivo || 'Esta ventana de lanzamiento fue cancelada'],
+    success:['✓','VENTANA EXITOSA',launch.motivo || 'Cierre exitoso registrado']
+  }[phase];
+  document.getElementById('mission-indicator').dataset.phase = phase;
+  document.getElementById('phase-symbol').textContent = display[0];
+  document.getElementById('phase-label').textContent = display[1];
+  document.getElementById('phase-description').textContent = display[2];
+  state.textContent = display[1];
+  const timed = ['before','zero','open'].includes(phase);
+  const seconds = Math.max(0,phase === 'before' ? Math.ceil((start-now)/1000) : Math.floor((now-start)/1000));
+  const parts = [Math.floor(seconds/86400),Math.floor(seconds%86400/3600),Math.floor(seconds%3600/60),seconds%60];
+  document.getElementById('phase-time').textContent = timed ? parts.map(n=>String(n).padStart(2,'0')).join(':')+' · D:H:M:S' : '';
 }
+updateMission();
+setInterval(updateMission,1000);
 const statusLine = document.getElementById('weather-status');
 const directions = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSO','SO','OSO','O','ONO','NO','NNO'];
 const formatValue = (value, unit) => Number.isFinite(value) ? `${Math.round(value)}${unit}` : 'No disponible';

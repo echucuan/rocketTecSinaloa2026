@@ -1,6 +1,8 @@
 /* Composición de pantalla de laboratorio, proporcional al área visible. */
 @font-face{font-family:'Neue Haas Tec';src:url('assets/tec-neue-haas-bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
 body{font-family:'Neue Haas Tec',Arial,sans-serif}
+.mission-time-note{font-family:'Neue Haas Tec',Arial,sans-serif;font-size:clamp(9px,.62vw,17px);line-height:1.4;color:#c2d8ef;text-align:left;margin:8px 0 0}
+@media(min-width:901px) and (min-aspect-ratio:4/3){.mission-time-note{font-size:min(.6vw,1.1svh);margin-top:.7svh}.clock-prefix{white-space:nowrap}}
 .emblem:before{filter:blur(58px);background:radial-gradient(ellipse at 50% 30%,rgba(140,195,255,.48),rgba(91,157,237,.25) 42%,transparent 76%)}
 .emblem figcaption{font-family:'Neue Haas Tec',Arial,sans-serif;letter-spacing:-.02em;line-height:1.25;width:min(56vw,288px);font-size:clamp(12px,3.2vw,17px);font-weight:400;text-shadow:none;margin:12px 0 0;padding:0}
 .emblem figcaption .slogan-first{display:block;color:#d0dff1;font-weight:400}
