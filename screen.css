@@ -1,0 +1,41 @@
+/* Composición de pantalla de laboratorio, proporcional al área visible. */
+@font-face{font-family:'Neue Haas Tec';src:url('assets/tec-neue-haas-bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+body{font-family:'Neue Haas Tec',Arial,sans-serif}
+.emblem:before{filter:blur(58px);background:radial-gradient(ellipse at 50% 30%,rgba(140,195,255,.48),rgba(91,157,237,.25) 42%,transparent 76%)}
+.emblem figcaption{font-family:'Neue Haas Tec',Arial,sans-serif;letter-spacing:-.02em;line-height:1.25;width:min(56vw,288px);font-size:clamp(12px,3.2vw,17px);font-weight:400;text-shadow:none;margin:12px 0 0;padding:0}
+.emblem figcaption .slogan-first{display:block;color:#d0dff1;font-weight:400}
+.emblem figcaption .slogan-second{display:block;color:#fff;font-weight:700;margin-top:4px}
+.emblem figcaption:after{content:'';display:block;width:44px;height:2px;background:#6ebaff;margin:14px auto 0}
+.launch-name,.launch-schedule,.launch-qr span,.clock-unit small{font-family:'Neue Haas Tec',Arial,sans-serif}
+@media(min-width:901px) and (min-aspect-ratio:4/3){
+ .page{height:100svh;min-height:0;display:grid;grid-template-rows:12svh minmax(0,1fr) 6svh;padding:0 4vw}
+ .header{height:auto;min-height:0;max-height:none}
+ .tec-brand{padding:1.2svh 1.2vw}.tec-brand img{width:15vw;max-height:8svh;object-position:left center}
+ .institution{font-size:1.5vw}
+ main{min-height:0;display:grid;grid-template-rows:minmax(0,1fr) 10svh}
+ .hero{min-height:0;grid-template-columns:1.03fr 1fr;gap:4vw;padding:1.6svh 1.2vw;align-items:center}
+ h1{font-size:min(5.8vw,9.5svh);line-height:1.04}
+ .eyebrow{font-size:min(.8vw,1.6svh);margin-bottom:2.5svh}
+ .intro{font-size:min(1.3vw,2.4svh);margin:2.5svh 0 3svh}
+ .message p{font-size:min(1.05vw,2svh)}.message-label{font-size:min(.7vw,1.3svh)}
+ .emblem{margin:0;padding:0;min-height:0;align-self:center}
+ .emblem>img{width:min(23vw,30svh);height:auto;max-width:none}
+ .emblem:before{inset:-10% -12% 24%;filter:blur(58px);opacity:1}
+ .emblem figcaption{width:min(18.4vw,24svh);font-size:min(1.05vw,1.8svh);margin:1svh 0 0;line-height:1.25}
+ .emblem figcaption:after{margin:1.2svh auto 0}
+ .launch-dock{gap:1vw;margin-top:1.8svh;width:100%;max-width:660px}
+ .launch-dock .launch-window{padding:1.2svh .9vw;max-width:none}
+ .launch-name{font-size:min(.65vw,1.25svh);letter-spacing:.09em}.launch-name strong{font-size:1.6em}
+ .launch-schedule{font-size:min(.68vw,1.3svh);margin:.7svh 0}
+ .launch-status{font-size:min(.65vw,1.2svh);margin:1svh 0 .4svh}
+ .launch-clock{margin-top:.6svh;gap:.4vw}
+ .clock-prefix{font-size:min(.95vw,1.8svh);min-width:1.5vw;padding-top:1svh}
+ .clock-unit{gap:.5svh}.clock-unit b{font-size:min(2.5vw,4.5svh);padding:.6svh 2px}
+ .clock-unit small{font-size:min(.52vw,1svh)}
+ .launch-qr{flex-basis:min(8vw,14svh)}
+ .launch-qr img{width:min(8vw,14svh)!important;height:min(8vw,14svh)!important}
+ .launch-qr span{font-size:min(.5vw,.95svh);margin-top:.6svh;line-height:1.4}
+ .process{min-height:0;padding:1.5svh 1.2vw;align-items:center}
+ .process p{font-size:min(.95vw,1.8svh)}.process small{font-size:min(.77vw,1.4svh)}
+ footer{min-height:0;padding:1svh 0;font-size:min(.66vw,1.2svh)}
+}

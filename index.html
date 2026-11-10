@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061a38">
+  <meta name="description" content="Rocket Tec Sinaloa 2026. Reto F1025B del Tecnológico de Monterrey, Campus Sinaloa. De la física al despegue.">
+  <title>Rocket Tec Sinaloa 2026 · Reto F1025B</title>
+  <link rel="icon" href="assets/rocket-tec-oficial.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="identity.css">
+  <link rel="stylesheet" href="screen.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="page">
+    <header class="header">
+      <a class="tec-brand" href="./" aria-label="Tecnológico de Monterrey, inicio"><img src="assets/tec-monterrey-blanco.png" alt="Tecnológico de Monterrey"></a>
+      <div class="institution">Campus Sinaloa</div>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="headline">
+        <div class="copy">
+          <p class="eyebrow"><span class="rule"></span> RETO F1025B <span class="dot">/</span> INGENIERÍA EN ACCIÓN</p>
+          <h1 id="headline">DE LA FÍSICA<br>AL <em>DESPEGUE.</em></h1>
+          <p class="intro">Una idea se convierte en modelo.<br>Un modelo, en una misión.</p>
+          <div class="message"><span class="message-label" id="message-label">NUESTRA MISIÓN</span><p id="message-text">Diseñar, construir y poner a prueba<br>lo que somos capaces de imaginar.</p></div>
+        </div>
+        <figure class="emblem">
+          <img src="assets/rocket-tec-oficial.png" width="1024" height="1024" alt="Emblema oficial Rocket Tec Sinaloa 2026: cohete, montañas y estrellas" fetchpriority="high">
+          <figcaption><span class="slogan-first">Ciencia que se construye.</span><span class="slogan-second">Ingeniería que despega.</span></figcaption>
+          <div class="launch-dock">
+          <div class="launch-window" aria-label="Ventana de lanzamiento ALFA-1">
+            <p class="launch-name">VENTANA DE LANZAMIENTO <strong>ALFA-1</strong></p>
+            <p class="launch-schedule">10 NOV 2026 · 8:30–11:30 a. m. · Sinaloa</p>
+            <p class="launch-status" id="launch-status" role="status"></p>
+            <div class="launch-clock" id="launch-clock" role="timer" aria-label="Tiempo restante"></div>
+          </div>
+          <a class="launch-qr" id="launch-qr" href="https://echucuan.github.io/rocketTecSinaloa2026/ventanas/ALFA-1.html" aria-label="Consultar ventana ALFA-1">
+            <img src="assets/qr-ALFA-1.png" alt="QR de la página de ALFA-1" width="360" height="360">
+            <span>ESCANEA O PULSA<br>DETALLES DE LA VENTANA ↗</span>
+          </a>
+          </div>
+        </figure>
+      </section>
+      <section class="process" aria-label="Del modelo a la validación">
+        <div><span class="number">01</span><p>MODELAR<small>Entender la física</small></p></div>
+        <div><span class="number">02</span><p>SIMULAR<small>Predecir el vuelo</small></p></div>
+        <div><span class="number">03</span><p>CONSTRUIR<small>Dar forma a la idea</small></p></div>
+        <div><span class="number">04</span><p>VALIDAR<small>Contrastar con la realidad</small></p></div>
+      </section>
+    </main>
+    <footer><span>ROCKET TEC SINALOA <span class="footer-year">/ 2026</span></span><div class="groups" aria-label="Grupos participantes"><span>GRUPOS</span><b>501</b><b>502</b><b>503</b><b>504</b></div><span class="edition">DISEÑO · CIENCIA · EXPERIMENTACIÓN</span></footer>
+  </div>
+  <button class="fullscreen" id="fullscreen" type="button" aria-label="Entrar en pantalla completa" title="Pantalla completa">⛶ <span>Pantalla completa</span></button>
+  <p id="notice" class="notice" role="status" hidden></p>
+</body>
+</html>
