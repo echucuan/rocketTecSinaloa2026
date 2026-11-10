@@ -16,3 +16,11 @@
 .mission-indicator[data-phase="closed"]{--phase-color:#bdcddd}
 .mission-indicator[data-phase="zero"]{--phase-color:#fff}
 @media(max-width:750px){.mission{grid-template-columns:1fr 1fr!important;gap:24px}.mission-title{grid-column:1/-1}.mission-logo img{max-width:230px}.phase-ring{width:116px;height:116px}#phase-symbol{font-size:48px}.phase-time{font-size:11px}.mission-indicator{padding:0 8px}}
+.mission-brief{background:rgba(2,14,32,.48);border:1px solid #284d75;margin-top:22px;padding:24px}
+.brief-heading{display:flex;justify-content:space-between;align-items:center;gap:18px}.brief-heading h2{margin:8px 0 0}.brief-heading .eyebrow{margin:0}
+.optional-badge{flex-shrink:0;font-size:10px;letter-spacing:.08em;color:#bedcff;border:1px solid #4776a1;padding:9px 11px}
+.brief-objective{color:#d8e8fa;line-height:1.65;font-size:16px;margin:20px 0}
+.brief-details{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid #284d75;padding-top:18px}
+.brief-details article+article{border-left:1px solid #284d75;padding-left:24px}.brief-details h3{font-size:16px;margin:0 0 10px;color:#fff}.brief-details p{font-size:14px;line-height:1.65;color:#b8cce4;margin:0}.brief-details strong{font-weight:700;color:#e4f0ff}
+.brief-media{font-size:13px;line-height:1.6;color:#b8cce4;border-top:1px solid #284d75;padding-top:15px;margin:20px 0 0}.brief-media strong{color:#d8e8fa}
+@media(max-width:750px){.brief-heading{align-items:flex-start;flex-direction:column}.brief-details{grid-template-columns:1fr;gap:20px}.brief-details article+article{border-left:0;border-top:1px solid #284d75;padding:18px 0 0}.mission-brief{padding:18px}}
