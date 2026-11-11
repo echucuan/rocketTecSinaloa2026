@@ -9,9 +9,9 @@
   <link rel="icon" href="assets/rocket-tec-oficial.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="identity.css">
-  <link rel="stylesheet" href="screen.css">
-  <script src="config.js" defer></script>
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="screen.css?v=20261111-1">
+  <script src="config.js?v=20261111-1" defer></script>
+  <script src="app.js?v=20261111-1" defer></script>
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -31,6 +31,12 @@
         <figure class="emblem">
           <img src="assets/rocket-tec-oficial.png" width="1024" height="1024" alt="Emblema oficial Rocket Tec Sinaloa 2026: cohete, montañas y estrellas" fetchpriority="high">
           <figcaption><span class="slogan-first">Ciencia que se construye.</span><span class="slogan-second">Ingeniería que despega.</span></figcaption>
+          <div class="launch-carousel" role="region" aria-label="Ventanas de lanzamiento" tabindex="0">
+          <nav class="launch-navigation" aria-label="Recorrer ventanas">
+            <button id="launch-prev" type="button" aria-label="Ventana anterior">&#8592;</button>
+            <span id="launch-position" aria-live="polite"></span>
+            <button id="launch-next" type="button" aria-label="Ventana siguiente">&#8594;</button>
+          </nav>
           <div class="launch-dock">
           <div class="launch-window" aria-label="Ventana de lanzamiento ALFA-1">
             <p class="launch-name">VENTANA DE LANZAMIENTO <strong>ALFA-1</strong></p>
@@ -43,6 +49,7 @@
             <img src="assets/qr-ALFA-1.png" alt="QR de la página de ALFA-1" width="360" height="360">
             <span>ESCANEA O PULSA<br>DETALLES DE LA VENTANA ↗</span>
           </a>
+          </div>
           </div>
         </figure>
       </section>

@@ -1,6 +1,12 @@
 /* Composición de pantalla de laboratorio, proporcional al área visible. */
 @font-face{font-family:'Neue Haas Tec';src:url('assets/tec-neue-haas-bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
 body{font-family:'Neue Haas Tec',Arial,sans-serif}
+.launch-carousel{width:100%;max-width:660px;margin-top:1.2svh;touch-action:pan-y}
+.launch-navigation{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px;color:#b8d7fc;font-size:11px;letter-spacing:.08em}
+.launch-navigation button{border:1px solid #4776a1;background:#0b284d;color:#fff;width:32px;height:25px;cursor:pointer;border-radius:2px;font-size:19px;line-height:1}
+.launch-navigation button:disabled{opacity:.25;cursor:default}
+.launch-carousel .launch-dock{margin-top:0}
+@media(min-width:901px) and (min-aspect-ratio:4/3){.launch-navigation{font-size:min(.6vw,1.1svh);margin-bottom:.5svh}.launch-navigation button{height:2.8svh;width:2.5vw;font-size:1.7svh}.launch-carousel .launch-dock{margin-top:0}.emblem>img{width:min(23vw,28svh)}}
 .mission-time-note{font-family:'Neue Haas Tec',Arial,sans-serif;font-size:clamp(9px,.62vw,17px);line-height:1.4;color:#c2d8ef;text-align:left;margin:8px 0 0}
 @media(min-width:901px) and (min-aspect-ratio:4/3){.mission-time-note{font-size:min(.6vw,1.1svh);margin-top:.7svh}.clock-prefix{white-space:nowrap}}
 .emblem:before{filter:blur(58px);background:radial-gradient(ellipse at 50% 30%,rgba(140,195,255,.48),rgba(91,157,237,.25) 42%,transparent 76%)}
