@@ -1,0 +1,30 @@
+{
+  "schema": "rocket-tec-bitacora/1",
+  "id": "02f7179b-9be0-4896-9d7d-ba7760ecab84",
+  "folio": "ALFA-2-G502-E03-R02f7179b-9be0-4896-9d7d-ba7760ecab84",
+  "campus": "Sinaloa",
+  "ventana": "ALFA-2",
+  "creada": "2026-11-13T04:50:08.797Z",
+  "actualizada": "2026-11-13T04:51:23.510Z",
+  "datos": {
+    "grupo": "502",
+    "equipo": "03",
+    "fecha": "2026-11-11",
+    "hora": "21:50",
+    "version": "PLA",
+    "masa": "65",
+    "motor": "Estes A10-3T",
+    "motores_restantes": "3",
+    "resultado": "Encendió y salió de la base",
+    "recuperacion": "Recuperado completo",
+    "trayectoria": "Se desvió lateralmente",
+    "paracaidas": "Se desplegó parcialmente",
+    "sensor": "Sí",
+    "altura": "0",
+    "modelo_sensor": "1",
+    "observaciones": "",
+    "nombre_equipo": "HAIL MARY",
+    "autorizacion_foto": "Confirmada por quien elaboró la bitácora"
+  },
+  "foto": "foto-grupal.jpg"
+}
