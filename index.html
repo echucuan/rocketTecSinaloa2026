@@ -10,8 +10,11 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="identity.css">
   <link rel="stylesheet" href="screen.css?v=20261111-1">
+  <link rel="stylesheet" href="logos.css?v=20261113-logos1">
   <script src="config.js?v=20261113-1" defer></script>
-  <script src="app.js?v=20261111-1" defer></script>
+  <script src="bitacoras/catalogos.js?v=20261113-logos1" defer></script>
+  <script src="app.js?v=20261113-logos1" defer></script>
+  <script src="logos.js?v=20261113-logos1" defer></script>
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -29,7 +32,11 @@
           <div class="message"><span class="message-label" id="message-label">NUESTRA MISIÓN</span><p id="message-text">Diseñar, construir y poner a prueba<br>lo que somos capaces de imaginar.</p></div>
         </div>
         <figure class="emblem">
-          <img src="assets/rocket-tec-oficial.png" width="1024" height="1024" alt="Emblema oficial Rocket Tec Sinaloa 2026: cohete, montañas y estrellas" fetchpriority="high">
+          <div class="logo-rotator" id="logo-rotator" data-kind="official" aria-label="Logos de los equipos participantes">
+            <img class="logo-slide is-active" src="assets/rocket-tec-oficial.png" width="1024" height="1024" alt="Rocket Tec Sinaloa 2026" fetchpriority="high">
+            <img class="logo-slide" width="1024" height="1024" alt="" aria-hidden="true" decoding="async">
+            <button class="pause-logos" id="pause-logos" type="button" aria-label="Pausar presentación de logos" aria-pressed="false" hidden>Ⅱ</button>
+          </div>
           <figcaption><span class="slogan-first">Ciencia que se construye.</span><span class="slogan-second">Ingeniería que despega.</span></figcaption>
           <div class="launch-carousel" role="region" aria-label="Ventanas de lanzamiento" tabindex="0">
           <nav class="launch-navigation" aria-label="Recorrer ventanas">

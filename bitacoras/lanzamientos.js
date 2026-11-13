@@ -38,11 +38,15 @@ function render(){
     top.append(text('span',record.ventana,'eyebrow'),text('span',record.prueba?'REGISTRO DE PRUEBA':'BITÁCORA PUBLICADA','badge'));
     const title=text('h2',record.nombre);
     const team=text('p','Grupo '+record.grupo+' · Equipo '+record.equipo,'team');
+    const identity=document.createElement('div');identity.className='flight-identity';
+    const catalogTeam=window.ROCKET_CATALOG?.equipo(record.grupo,record.equipo);
+    if(catalogTeam){const logo=document.createElement('img');logo.src='../'+catalogTeam.logo;logo.alt='Logo de '+catalogTeam.nombre;logo.width=80;logo.height=80;logo.loading='lazy';identity.append(logo);}
+    const teamText=document.createElement('div');teamText.append(title,team);identity.append(teamText);
     const date=new Intl.DateTimeFormat('es-MX',{day:'numeric',month:'long',year:'numeric',timeZone:'America/Mazatlan'}).format(new Date(record.fecha+'T12:00:00-07:00'));
     const when=text('p',date+' · '+record.hora+' h · Sinaloa');
     const result=text('p',record.resultado+'. '+record.trayectoria+'.');
     const link=document.createElement('a');link.className='button';link.href=record.pagina;link.textContent='Consultar bitácora →';link.setAttribute('aria-label','Consultar bitácora de '+record.nombre+' en '+record.ventana);
-    card.append(top,title,team,when,result);
+    card.append(top,identity,when,result);
     if(record.prueba)card.append(text('p','Datos de ejemplo para probar el sitio. No acredita un lanzamiento real.','example-note'));
     card.append(link);$('records').append(card);
   }

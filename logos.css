@@ -1,0 +1,11 @@
+/* Mismo espacio para todos los emblemas: el contador conserva su posición. */
+.logo-rotator{position:relative;flex:none;width:min(29vw,43vh);max-width:360px;aspect-ratio:1;isolation:isolate}
+.logo-rotator .logo-slide{position:absolute;inset:0;display:block;width:100%!important;height:100%!important;max-width:none;object-fit:contain;aspect-ratio:auto;padding:0;filter:none;opacity:0;transform:translateY(6px) scale(.985);transition:opacity 650ms ease,transform 650ms cubic-bezier(.2,.7,.25,1);will-change:opacity,transform}
+.logo-rotator .logo-slide.is-active{opacity:1;transform:translateY(0) scale(1)}
+.logo-rotator.logo-enter{animation:rocket-arrival 1.25s cubic-bezier(.2,.7,.25,1) both}
+.pause-logos{position:absolute;right:-24px;top:4px;z-index:2;width:28px;height:28px;border:1px solid #6c9bd0;border-radius:50%;background:#0b284d;color:#d4e8ff;font:16px Arial,sans-serif;cursor:pointer;opacity:0;transition:opacity .2s}
+.emblem:hover .pause-logos,.pause-logos:focus-visible{opacity:1}.pause-logos[hidden]{display:none}
+@media(max-width:900px){.logo-rotator{width:33vw}}
+@media(max-width:600px){.logo-rotator{width:70vw;max-width:360px}.pause-logos{opacity:.65;right:0}}
+@media(min-width:901px) and (min-aspect-ratio:4/3){.logo-rotator{width:min(23vw,30svh);max-width:none}}
+@media(prefers-reduced-motion:reduce){.logo-rotator.logo-enter{animation:none}.logo-rotator .logo-slide{transition:none;transform:none}.pause-logos{transition:none}}

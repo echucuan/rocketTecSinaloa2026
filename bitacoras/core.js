@@ -26,7 +26,7 @@
       const flags=v.getUint16(p+6,true),method=v.getUint16(p+8,true),len=v.getUint32(p+18,true),n=v.getUint16(p+26,true),extra=v.getUint16(p+28,true),start=p+30+n+extra;
       if(method!==0||(flags&9)||start+len>bytes.length)throw Error('Abre el ZIP original generado por la bitácora, sin recomprimirlo.');
       const name=dec.decode(bytes.slice(p+30,p+30+n));
-      if(!['bitacora.json','reporte.html','foto-grupal.jpg'].includes(name)||files[name])throw Error('Contenido del paquete no reconocido.');
+      if(!['bitacora.json','reporte.html','foto-grupal.jpg','logo-equipo.png','logo-equipo.jpg'].includes(name)||files[name])throw Error('Contenido del paquete no reconocido.');
       const data=bytes.slice(start,start+len);if(crc32(data)!==v.getUint32(p+14,true))throw Error('Archivo dañado.');
       files[name]=data;p=start+len;
     }
@@ -44,12 +44,25 @@
     if(r.datos.motores_restantes!==undefined&&!/^[1-8]$/.test(r.datos.motores_restantes))throw Error('Motores restantes debe ser un valor del 1 al 8.');
     if(catalog&&!team)throw Error('El equipo no pertenece al catálogo de este grupo.');
     if(team&&r.datos.nombre_equipo&&r.datos.nombre_equipo!==team.nombre)throw Error('El nombre del equipo no coincide con el catálogo.');
-    if(r.foto!==null&&r.foto!=='foto-grupal.jpg')throw Error('Referencia de foto inválida.');return r;
+    if(r.foto!==null&&r.foto!=='foto-grupal.jpg')throw Error('Referencia de foto inválida.');
+    if(r.logo!=null&&!['logo-equipo.png','logo-equipo.jpg'].includes(r.logo))throw Error('Referencia de logo inválida.');return r;
   }
   const labels={grupo:'Grupo',equipo:'Equipo',intento:'Intento en esta ventana',fecha:'Fecha del lanzamiento',hora:'Hora del lanzamiento (Sinaloa)',version:'Versión del diseño',masa:'Masa lista para despegar (g)',motor:'Modelo del motor',motores:'Número de motores',prediccion:'Altura predicha (m)',resultado:'Encendido y salida de la base',trayectoria:'Trayectoria observada',paracaidas:'Despliegue del paracaídas',sensor:'Lectura válida del sensor',altura:'Altura máxima medida (m)',modelo_sensor:'Modelo del sensor',recuperacion:'Recuperación',observaciones:'Observaciones',explicacion:'Interpretación',mejora:'Cambio propuesto',autorizacion_foto:'Autorización de la fotografía'};
   labels.nombre_equipo='Nombre del equipo';
   labels.motores_restantes='Motores restantes después del lanzamiento';
   function rows(r){const team=catalog?.equipo(r.datos.grupo,r.datos.equipo);const data={...r.datos};if(team)data.nombre_equipo=team.nombre;return Object.entries(data).filter(([,v])=>v!=='').map(([key,value])=>`<dt>${escape(labels[key]||key)}</dt><dd>${escape(value)}</dd>`).join('');}
-  function report(r){validate(r);return `<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(r.folio)}</title><style>body{font:16px/1.6 Arial;max-width:850px;margin:40px auto;padding:24px;color:#142b45}h1{font-size:28px}dt{font-weight:bold;margin-top:15px}dd{margin:0;white-space:pre-wrap}img{max-width:100%;height:auto}small{color:#52677c}@media print{body{margin:0}img{max-height:350px}}</style><h1>Bitácora de lanzamiento</h1><p>${escape(r.folio)} · Campus ${escape(r.campus)}</p><small>ID: ${escape(r.id)}<br>Registro elaborado: ${escape(r.creada)} (UTC). Fecha declarada por el dispositivo; no es un sello de recepción.</small><dl>${rows(r)}</dl>${r.foto?'<h2>Foto grupal</h2><img src="foto-grupal.jpg" alt="Equipo con el cohete después del lanzamiento">':''}<p>Documento elaborado por el equipo. Requiere revisión del profesor antes de su publicación.</p></html>`;}
-  const api={zip,unzip,validate,escape,rows,report,crc32};root.BitacoraCore=api;if(typeof module!=='undefined')module.exports=api;
+  function logoMime(name,bytes){
+    if(!(bytes instanceof Uint8Array)||bytes.length>2*1024*1024)throw Error('El logo del equipo supera 2 MB o no es válido.');
+    if(name==='logo-equipo.png'&&[137,80,78,71,13,10,26,10].every((byte,i)=>bytes[i]===byte))return 'image/png';
+    if(name==='logo-equipo.jpg'&&bytes[0]===255&&bytes[1]===216&&bytes[2]===255)return 'image/jpeg';
+    throw Error('El formato del logo no corresponde al archivo.');
+  }
+  function report(r){validate(r);return `<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(r.folio)}</title><style>body{font:16px/1.6 Arial;max-width:850px;margin:40px auto;padding:24px;color:#142b45}h1{font-size:28px}dt{font-weight:bold;margin-top:15px}dd{margin:0;white-space:pre-wrap}img{max-width:100%;height:auto}.team-logo{width:140px;height:140px;object-fit:contain}small{color:#52677c}@media print{body{margin:0}img{max-height:350px}}</style>${r.logo?`<img class="team-logo" src="${escape(r.logo)}" alt="Logo de ${escape(catalog?.equipo(r.datos.grupo,r.datos.equipo)?.nombre||'equipo')}">`:''}<h1>Bitácora de lanzamiento</h1><p>${escape(r.folio)} · Campus ${escape(r.campus)}</p><small>ID: ${escape(r.id)}<br>Registro elaborado: ${escape(r.creada)} (UTC). Fecha declarada por el dispositivo; no es un sello de recepción.</small><dl>${rows(r)}</dl>${r.foto?'<h2>Foto grupal</h2><img src="foto-grupal.jpg" alt="Equipo con el cohete después del lanzamiento">':''}<p>Documento elaborado por el equipo. Requiere revisión del profesor antes de su publicación.</p></html>`;}
+  function packageFiles(r,{logo,photo}={}){
+    validate(r);const files={'bitacora.json':JSON.stringify(r,null,2),'reporte.html':report(r)};
+    if(r.logo){logoMime(r.logo,logo);files[r.logo]=logo;}
+    if(r.foto){if(!(photo instanceof Uint8Array)||photo.length>3*1024*1024||photo[0]!==255||photo[1]!==216)throw Error('No se encontró una fotografía válida.');files[r.foto]=photo;}
+    return files;
+  }
+  const api={zip,unzip,validate,escape,rows,report,crc32,logoMime,packageFiles};root.BitacoraCore=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

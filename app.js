@@ -1,10 +1,4 @@
 'use strict';
-const rocketLogo = document.querySelector('.emblem img');
-if (rocketLogo) {
-  const animateLogo = () => rocketLogo.classList.add('logo-enter');
-  if (rocketLogo.complete) animateLogo();
-  else rocketLogo.addEventListener('load', animateLogo, {once:true});
-}
 const config = window.ROCKET_TEC || {};
 if (typeof config.etiqueta === 'string') document.getElementById('message-label').textContent = config.etiqueta;
 if (typeof config.mensaje === 'string') {
