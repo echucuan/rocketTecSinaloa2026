@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#061a38"><title>Lanzamientos · Rocket Tec Sinaloa</title>
+  <link rel="icon" href="../assets/rocket-tec-oficial.png">
+  <link rel="stylesheet" href="lanzamientos.css?v=20261113-1">
+  <script src="../config.js" defer></script>
+  <script src="publicadas/registros.js?v=20261113-1" defer></script>
+  <script src="lanzamientos.js?v=20261113-1" defer></script>
+</head>
+<body>
+  <header><a href="../index.html"><img src="../assets/tec-monterrey-blanco.png" alt="Tecnológico de Monterrey"></a><span>Campus Sinaloa</span></header>
+  <main>
+    <nav><a id="back" href="../index.html">← Volver a la pantalla principal</a></nav>
+    <div class="intro"><div><p class="eyebrow">ROCKET TEC / BITÁCORAS PUBLICADAS</p><h1 id="title">Lanzamientos</h1><p>La historia de cada vuelo, documentada por su equipo.</p></div><img src="../assets/rocket-tec-oficial.png" alt="Rocket Tec Sinaloa 2026" width="160" height="160"></div>
+    <form class="filters" id="filters" aria-label="Filtrar lanzamientos">
+      <label>Ventana<select id="window"><option value="">Todas las ventanas</option></select></label>
+      <label>Grupo<select id="group"><option value="">Todos los grupos</option><option>501</option><option>502</option><option>503</option><option>504</option></select></label>
+      <a id="register" class="button" href="index.html">Registrar bitácora ↗</a>
+    </form>
+    <p id="count" class="count" role="status" aria-live="polite"></p>
+    <div id="records" class="records" aria-label="Bitácoras disponibles"></div>
+    <section id="empty" class="empty" hidden><p class="eyebrow">LA MISIÓN CONTINÚA</p><h2>Aún no hay lanzamientos publicados.</h2><p id="empty-note">Las bitácoras aparecerán aquí después de que el profesor las revise y las incorpore al sitio.</p><a id="all-windows" href="lanzamientos.html">Ver todas las ventanas →</a></section>
+    <noscript><p class="notice">Activa JavaScript para filtrar las bitácoras. Puedes consultar el <a href="publicadas/ALFA-2-G502-E03-PRUEBA/index.html">registro de prueba de ALFA-2</a>.</p></noscript>
+    <footer>Solo se muestran bitácoras incorporadas al sitio por el profesor. Los registros de prueba están identificados y no cuentan como vuelos validados.<br>ROCKET TEC · F1025B · CAMPUS SINALOA</footer>
+  </main>
+</body>
+</html>
