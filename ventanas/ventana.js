@@ -27,6 +27,18 @@ function updateMission(now = Date.now()) {
 }
 updateMission();
 setInterval(updateMission,1000);
+// Acceso local al registro, también disponible al cerrar la ventana.
+const facts = document.querySelector('.facts');
+if (facts && launch) {
+  const entry = document.createElement('div');
+  entry.className = 'bitacora-entry';
+  const description = document.createElement('p');
+  description.textContent = '¿Ya realizaste un intento? Documenta lo observado y prepara tu entrega al profesor. En ALFA es opcional.';
+  const link = document.createElement('a');
+  link.href = '../bitacoras/index.html?ventana=' + encodeURIComponent(launch.nombre);
+  link.textContent = 'Documentar un lanzamiento ↗';
+  entry.append(description,link); facts.after(entry);
+}
 const statusLine = document.getElementById('weather-status');
 const directions = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSO','SO','OSO','O','ONO','NO','NNO'];
 const formatValue = (value, unit) => Number.isFinite(value) ? `${Math.round(value)}${unit}` : 'No disponible';
