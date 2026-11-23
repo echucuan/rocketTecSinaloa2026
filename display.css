@@ -8,6 +8,15 @@ body{background:radial-gradient(ellipse at 85% 15%,#123665 0%,#091f40 45%,#06172
 .institution{padding:0;font-size:22px;color:#d9e6f7}
 main{display:flex;flex:1;flex-direction:column;min-height:0;justify-content:center;width:100%;grid-template-columns:minmax(0,1fr)}
 .hero{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:auto auto;gap:28px 40px;padding:32px 0;align-items:center;flex:1}
+.hero{grid-template-columns:max-content minmax(0,1fr);column-gap:clamp(16px,1.8vw,36px)}
+.copy{justify-content:flex-start;align-items:center}
+.process-headline{align-items:flex-start;text-align:left}
+.emblem{display:none}
+.team-logo-gallery{grid-column:2;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(6px,.8vw,16px);align-items:center;position:relative;width:100%;min-width:0}
+.team-logo-gallery img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 8px 14px #0003);transition:opacity .55s ease,transform .55s ease;opacity:1}
+.team-logo-gallery img.is-changing{opacity:0;transform:translateY(8px) scale(.97)}
+.gallery-pause{position:absolute;right:0;bottom:-42px;background:#0b284d;color:#e6f1ff;border:1px solid var(--edge);border-radius:5px;padding:7px 10px;font:12px/1.2 Arial,sans-serif;cursor:pointer;opacity:0;transition:opacity .2s}
+.team-logo-gallery:hover .gallery-pause,.gallery-pause:focus-visible{opacity:1}
 .copy{min-width:0;text-align:left;align-items:flex-start}
 .process-headline{display:flex;flex-direction:column;gap:0;margin:0;padding:0;font-family:'Neue Haas Tec',Arial,sans-serif;font-stretch:normal;font-size:clamp(42px,4.4vw,92px);line-height:1.03;letter-spacing:-.055em;text-align:left}
 .process-headline{align-items:flex-start}.process-headline span,.process-headline em{color:#f2f6fc;font-size:inherit;font-style:normal;letter-spacing:inherit;text-shadow:none}.process-headline em{color:var(--accent)}.process-headline:after{display:none}
@@ -42,6 +51,7 @@ footer{min-height:62px;padding:16px 0;gap:20px;border-top:1px solid var(--edge);
  .page{height:100svh;min-height:680px;display:grid;grid-template-rows:10svh minmax(0,1fr) 6svh}.header{height:auto}.tec-brand img{width:min(14vw,270px);max-height:6.5svh}.institution{font-size:clamp(20px,1.35vw,32px)}
  main{display:grid;grid-template-rows:minmax(0,1fr) 10svh}.hero{grid-template-rows:minmax(0,1fr) auto;gap:2svh 4vw;padding:2.5svh 0 0}
  .process-headline{font-size:min(4.5vw,7.8svh);line-height:1.02}.emblem .logo-rotator{width:min(15vw,26svh)}.emblem figcaption{width:11vw;font-size:clamp(14px,1.05vw,24px)}
+ .team-logo-gallery img{max-height:23svh}
  .launch-navigation{margin-bottom:1svh;font-size:clamp(12px,.8vw,18px)}.launch-dock{grid-template-columns:minmax(0,1fr) min(15vw,25svh);gap:2vw;padding:2.5svh 2vw}
  .launch-heading{margin-bottom:2svh;padding-bottom:1.8svh}.launch-meta{font-size:clamp(14px,1.1vw,26px);gap:.6svh}.launch-heading .launch-name{font-size:min(2.35vw,4svh)}
  .clock-prefix,.clock-unit b{font-size:min(8vw,13.5svh)}.clock-unit{gap:1svh}.clock-unit small{font-size:clamp(14px,1vw,24px)}.mission-time-note{margin-top:2svh;font-size:clamp(12px,.76vw,18px)}
@@ -57,7 +67,8 @@ footer{min-height:62px;padding:16px 0;gap:20px;border-top:1px solid var(--edge);
 }
 @media(max-width:650px){
  .header{height:84px;gap:16px;min-height:0}.tec-brand{padding:12px 0}.tec-brand img{width:150px;max-height:56px}.institution{font-size:16px;max-width:110px}
- .hero{grid-template-columns:1fr;gap:28px;padding:28px 0 0}.copy{align-items:center}.process-headline{font-size:clamp(38px,10.5vw,66px);text-align:center;align-items:center;line-height:1.05}
+ .hero{grid-template-columns:1fr;gap:28px;padding:28px 0 0}.copy{align-items:center}.process-headline{font-size:clamp(38px,10.5vw,66px);text-align:left;align-items:flex-start;line-height:1.05}
+ .team-logo-gallery{grid-column:1;gap:10px}.gallery-pause{opacity:.8;bottom:-30px}
  .emblem{flex-direction:row;justify-content:center;gap:20px}.emblem .logo-rotator{width:120px}.emblem figcaption{max-width:170px;text-align:left;font-size:14px}
  .launch-navigation{margin-bottom:12px}.launch-navigation button{height:44px}.launch-dock{grid-template-columns:1fr;gap:20px;padding:20px 16px;border-radius:12px}
  .launch-heading{flex-direction:column-reverse;align-items:flex-start;gap:16px;margin-bottom:20px;padding-bottom:18px}.launch-heading .launch-name{font-size:26px;text-align:left}.launch-meta{align-items:flex-start;font-size:14px;gap:6px}.launch-meta p{justify-content:flex-start}
@@ -67,3 +78,5 @@ footer{min-height:62px;padding:16px 0;gap:20px;border-top:1px solid var(--edge);
  .process{grid-template-columns:1fr 1fr;gap:22px 16px;padding:28px 0}.process>div+div{padding-left:0;border-left:0}.process p{font-size:13px}.process small{font-size:12px}
  footer{flex-direction:column;align-items:center;gap:12px;padding:20px 0 76px;font-size:11px}.groups{gap:20px}.groups .group-trigger{padding:12px 2px}
 }
+@media(prefers-reduced-motion:reduce){.team-logo-gallery img,.gallery-pause{transition:none}}
+@media(min-width:1100px) and (min-height:680px) and (min-aspect-ratio:4/3){.hero{column-gap:clamp(16px,1.8vw,36px)}}

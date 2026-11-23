@@ -14,9 +14,9 @@
   <script src="config.js?v=20261123-beta" defer></script>
   <script src="bitacoras/catalogos.js?v=20261113-logos1" defer></script>
   <script src="app.js?v=20261123-tv8" defer></script>
-  <script src="logos.js?v=20261113-logos1" defer></script>
+  <script src="logos-trio.js?v=20261123-3" defer></script>
   <link rel="stylesheet" href="grupos.css?v=20261113-1">
-  <link rel="stylesheet" href="display.css?v=20261123-1">
+  <link rel="stylesheet" href="display.css?v=20261123-4">
   <script src="grupos.js?v=20261113-1" defer></script>
 </head>
 <body>
@@ -35,7 +35,15 @@
             <em>EXPERIMENTA.</em>
           </h1>
         </div>
-        <figure class="emblem">
+        <div class="team-logo-gallery" id="team-logo-gallery" aria-label="Logos de los equipos participantes">
+          <img src="assets/rocket-tec-oficial.png" alt="Rocket Tec Sinaloa 2026" width="320" height="320" fetchpriority="high">
+          <img alt="" width="320" height="320" decoding="async">
+          <img alt="" width="320" height="320" decoding="async">
+          <img alt="" width="320" height="320" decoding="async">
+          <img alt="" width="320" height="320" decoding="async">
+          <button class="gallery-pause" id="gallery-pause" type="button" aria-label="Pausar logos" aria-pressed="false">Pausar logos</button>
+        </div>
+        <figure class="emblem" hidden aria-hidden="true">
           <div class="logo-rotator" id="logo-rotator" data-kind="official" aria-label="Logos de los equipos participantes">
             <img class="logo-slide is-active" src="assets/rocket-tec-oficial.png" width="1024" height="1024" alt="Rocket Tec Sinaloa 2026" fetchpriority="high">
             <img class="logo-slide" width="1024" height="1024" alt="" aria-hidden="true" decoding="async">
