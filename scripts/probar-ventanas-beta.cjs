@@ -16,13 +16,13 @@ const expected = {
 
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.match(home, /config\.js\?v=20261123-beta/, 'la portada debe invalidar la configuración anterior en caché');
-assert.match(home, /screen\.css\?v=20261123-tv14/, 'la portada debe cargar el nuevo titular del proceso');
+assert.match(home, /screen\.css\?v=20261123-tv15/, 'la portada debe cargar el titular depurado del proceso');
 assert.doesNotMatch(home, /NUESTRA MISIÓN|Diseñar, construir y poner a prueba/, 'la portada no debe mostrar la leyenda de misión');
 assert.match(home, /app\.js\?v=20261123-tv8/, 'la portada debe cargar fecha y hora separadas sin ubicación en el horario');
 assert.doesNotMatch(fs.readFileSync(path.join(root, 'app.js'), 'utf8'), /: 'APERTURA EN'/, 'el contador pendiente no debe mostrar APERTURA EN');
 assert.doesNotMatch(home, /Una idea se convierte|INGENIERÍA EN ACCIÓN/, 'la portada debe dejar solo el titular en la columna izquierda');
-assert.match(home, /MODELA\.[\s\S]*SIMULA\.[\s\S]*CONSTRUYE\.[\s\S]*EXPERIMENTA\./, 'la portada debe mostrar las cuatro etapas del reto');
-assert.match(home, /INGENIERÍA AEROESPACIAL/, 'la portada debe mostrar la disciplina debajo del titular');
+assert.match(home, /MODELA\.[\s\S]*SIMULA\.[\s\S]*EXPERIMENTA\./, 'la portada debe mostrar las tres acciones del reto');
+assert.doesNotMatch(home, /CONSTRUYE\.|INGENIERÍA AEROESPACIAL/, 'la portada no debe mostrar las leyendas retiradas');
 assert.doesNotMatch(home, /DE LA FÍSICA|AL <em>DESPEGUE/, 'la portada no debe conservar el titular anterior');
 assert.match(home, /class="launch-heading"[\s\S]*class="launch-code"/, 'el contador debe presentar un encabezado de misión jerarquizado');
 assert.match(home, /id="launch-date"[\s\S]*id="launch-time"/, 'el encabezado debe separar FECHA y HORA');
