@@ -8,7 +8,9 @@ window.ROCKET_WINDOWS = [
   {nombre:'ALFA-2', inicio:'2026-11-11T07:00:00-07:00', fin:'2026-11-11T08:00:00-07:00', estado:'programada', motivo:'', qr:'assets/qr-ALFA-2.png', pagina:'https://echucuan.github.io/rocketTecSinaloa2026/ventanas/ALFA-2.html'},
   {nombre:'ALFA-3', inicio:'2026-11-11T10:00:00-07:00', fin:'2026-11-11T11:00:00-07:00', estado:'programada', motivo:'', qr:'assets/qr-ALFA-3.png', pagina:'https://echucuan.github.io/rocketTecSinaloa2026/ventanas/ALFA-3.html'},
   {nombre:'ALFA-4', inicio:'2026-11-13T07:30:00-07:00', fin:'2026-11-13T08:30:00-07:00', estado:'programada', motivo:'', qr:'assets/qr-ALFA-4.png', pagina:'https://echucuan.github.io/rocketTecSinaloa2026/ventanas/ALFA-4.html'},
-  {nombre:'ALFA-5', inicio:'2026-11-13T10:30:00-07:00', fin:'2026-11-13T11:30:00-07:00', estado:'programada', motivo:'', qr:'assets/qr-ALFA-5.png', pagina:'https://echucuan.github.io/rocketTecSinaloa2026/ventanas/ALFA-5.html'}
+  {nombre:'ALFA-5', inicio:'2026-11-13T10:30:00-07:00', fin:'2026-11-13T11:30:00-07:00', estado:'programada', motivo:'', qr:'assets/qr-ALFA-5.png', pagina:'https://echucuan.github.io/rocketTecSinaloa2026/ventanas/ALFA-5.html'},
+  {nombre:'BETA-1', inicio:'2026-11-25T08:00:00-07:00', fin:'2026-11-25T12:00:00-07:00', estado:'programada', motivo:'', qr:'assets/qr-BETA-1.png', pagina:'https://echucuan.github.io/rocketTecSinaloa2026/ventanas/BETA-1.html'},
+  {nombre:'BETA-2', inicio:'2026-11-27T08:00:00-07:00', fin:'2026-11-27T12:00:00-07:00', estado:'programada', motivo:'', qr:'assets/qr-BETA-2.png', pagina:'https://echucuan.github.io/rocketTecSinaloa2026/ventanas/BETA-2.html'}
 ];
 window.ROCKET_TEC = {
   etiqueta: 'NUESTRA MISIÓN',
