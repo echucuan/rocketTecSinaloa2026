@@ -1,0 +1,69 @@
+/* Sistema visual de la portada: misma reticula y escala para toda la pantalla. */
+:root{--edge:rgba(164,198,235,.18);--quiet:#a9bfd9;--accent:#7bbdff}
+body{background:radial-gradient(ellipse at 85% 15%,#123665 0%,#091f40 45%,#06172f 100%)}
+.sky{opacity:.16}
+.page{width:90%;max-width:3600px;min-height:100svh;height:auto;margin:auto;padding:0;display:flex;flex-direction:column}
+.header{height:100px;min-height:0;max-height:none;border-bottom:1px solid var(--edge)}
+.tec-brand{padding:16px 0}.tec-brand img{width:230px;max-height:70px;object-position:left center}
+.institution{padding:0;font-size:22px;color:#d9e6f7}
+main{display:flex;flex:1;flex-direction:column;min-height:0;justify-content:center;width:100%;grid-template-columns:minmax(0,1fr)}
+.hero{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:auto auto;gap:28px 40px;padding:32px 0;align-items:center;flex:1}
+.copy{min-width:0;text-align:left;align-items:flex-start}
+.process-headline{display:flex;flex-direction:column;gap:0;margin:0;padding:0;font-family:'Neue Haas Tec',Arial,sans-serif;font-stretch:normal;font-size:clamp(42px,4.4vw,92px);line-height:1.03;letter-spacing:-.055em;text-align:left}
+.process-headline{align-items:flex-start}.process-headline span,.process-headline em{color:#f2f6fc;font-size:inherit;font-style:normal;letter-spacing:inherit;text-shadow:none}.process-headline em{color:var(--accent)}.process-headline:after{display:none}
+.emblem{flex-direction:row;justify-content:flex-end;align-items:center;gap:24px;padding:0;margin:0;min-width:0}.emblem:before{display:none}
+.emblem .logo-rotator{width:clamp(150px,14vw,300px);max-width:none;flex-shrink:0}
+.emblem figcaption{width:180px;margin:0;padding:0;font-size:16px;line-height:1.5;letter-spacing:-.01em;text-align:left;text-shadow:none}.emblem figcaption:after{display:none}
+.launch-carousel{width:100%;max-width:none;margin:0}
+.launch-navigation{justify-content:flex-end;gap:12px;margin:0 0 12px;color:var(--quiet);font-size:14px}
+#launch-position{order:-1;margin-right:auto}
+.launch-navigation button{width:44px;height:36px;background:transparent;border:1px solid var(--edge);border-radius:6px;font-size:22px}.launch-navigation button:hover:not(:disabled){background:#ffffff12}
+.launch-dock{display:grid;grid-template-columns:minmax(0,1fr) 190px;align-items:center;gap:30px;margin:0;padding:28px 32px;border:1px solid var(--edge);border-radius:14px;background:linear-gradient(115deg,#0c284c,#091d39);box-shadow:0 16px 40px #0002}
+.launch-dock .launch-window{max-width:none;margin:0;padding:0;border:0;background:none;box-shadow:none}.launch-window:after,.launch-heading:before{display:none}
+.launch-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0 0 22px;padding:0 0 22px;border-bottom:1px solid var(--edge);background:none}
+.launch-meta{font-family:'Neue Haas Tec',Arial,sans-serif;font-size:16px;gap:8px}.launch-meta p{gap:12px;line-height:1.35}
+.launch-meta span{min-width:0;width:4.2em;color:var(--quiet);font-size:.8em;font-weight:400;letter-spacing:.09em}.launch-meta strong{font-weight:400;color:#e6effb;letter-spacing:0}
+.launch-heading .launch-name{display:block;margin:0;padding:0;color:var(--accent);font-size:clamp(23px,2.1vw,48px);line-height:1.15;letter-spacing:-.015em;text-align:right;border:0;background:none;box-shadow:none;text-shadow:none}
+.launch-code{font:inherit;letter-spacing:inherit;color:inherit}
+.launch-status{margin:0 0 12px;font:14px/1.4 'Neue Haas Tec',Arial,sans-serif;letter-spacing:.04em}.launch-status:before{box-shadow:none}
+.launch-clock{display:grid;grid-template-columns:.8fr repeat(4,1fr);align-items:start;gap:16px;margin:0;line-height:1}
+.clock-prefix,.clock-unit b{font-family:'Neue Haas Tec',Arial,sans-serif;font-size:clamp(48px,7.5vw,180px);font-weight:700;line-height:1.05;letter-spacing:-.045em;text-shadow:none}
+.clock-prefix{display:block;padding:0;min-width:0;align-self:start;text-align:left;color:var(--accent)}
+.clock-unit{gap:14px}.clock-unit b{padding:0;background:none;border:0;color:#f5f8ff}.clock-unit small{font-size:14px;line-height:1.2;font-weight:400;letter-spacing:.15em;color:var(--quiet)}
+.mission-time-note{font-size:12px;line-height:1.5;color:var(--quiet);margin:24px 0 0}
+.launch-window.is-closed .launch-clock{display:block;padding:24px 0;font:700 clamp(28px,4vw,70px)/1.2 'Neue Haas Tec',Arial,sans-serif;color:#dce9fa}
+.launch-qr{display:flex;flex-direction:column;align-items:center;justify-content:center;border-left:1px solid var(--edge);padding-left:28px;align-self:stretch;min-width:0}
+.launch-qr img{width:160px!important;height:160px!important;border:8px solid white;border-radius:6px;max-width:100%;object-fit:contain}
+.launch-qr span{font-size:12px;line-height:1.5;letter-spacing:.03em;color:var(--quiet);margin-top:14px}
+.process{gap:24px;padding:22px 0;border-top:0}.process>div{gap:14px}.process>div+div{border-left:1px solid var(--edge);padding-left:24px}
+.process .number{font-size:14px;color:#78a8d8}.process p{font-size:15px;letter-spacing:.08em;line-height:1.4}.process small{font-size:14px;color:var(--quiet);margin-top:5px;line-height:1.4}
+footer{min-height:62px;padding:16px 0;gap:20px;border-top:1px solid var(--edge);font-size:12px;letter-spacing:.08em;color:var(--quiet)}.groups{gap:18px}.edition{font-size:11px}
+@media(min-width:1100px) and (min-height:680px) and (min-aspect-ratio:4/3){
+ .page{height:100svh;min-height:680px;display:grid;grid-template-rows:10svh minmax(0,1fr) 6svh}.header{height:auto}.tec-brand img{width:min(14vw,270px);max-height:6.5svh}.institution{font-size:clamp(20px,1.35vw,32px)}
+ main{display:grid;grid-template-rows:minmax(0,1fr) 10svh}.hero{grid-template-rows:minmax(0,1fr) auto;gap:2svh 4vw;padding:2.5svh 0 0}
+ .process-headline{font-size:min(4.5vw,7.8svh);line-height:1.02}.emblem .logo-rotator{width:min(15vw,26svh)}.emblem figcaption{width:11vw;font-size:clamp(14px,1.05vw,24px)}
+ .launch-navigation{margin-bottom:1svh;font-size:clamp(12px,.8vw,18px)}.launch-dock{grid-template-columns:minmax(0,1fr) min(15vw,25svh);gap:2vw;padding:2.5svh 2vw}
+ .launch-heading{margin-bottom:2svh;padding-bottom:1.8svh}.launch-meta{font-size:clamp(14px,1.1vw,26px);gap:.6svh}.launch-heading .launch-name{font-size:min(2.35vw,4svh)}
+ .clock-prefix,.clock-unit b{font-size:min(8vw,13.5svh)}.clock-unit{gap:1svh}.clock-unit small{font-size:clamp(14px,1vw,24px)}.mission-time-note{margin-top:2svh;font-size:clamp(12px,.76vw,18px)}
+ .launch-qr{padding-left:2vw}.launch-qr img{width:min(11vw,20svh)!important;height:min(11vw,20svh)!important}.launch-qr span{font-size:clamp(12px,.75vw,18px)}
+ .process{padding:2svh 0;align-items:center}.process p{font-size:clamp(15px,1vw,24px)}.process small{font-size:clamp(14px,.9vw,21px)}.process .number{font-size:clamp(14px,1vw,24px)}
+ footer{min-height:0;padding:1svh 0;font-size:clamp(12px,.8vw,18px)}.edition{font-size:inherit}
+}
+@media(max-width:1099px){
+ .emblem{flex-direction:column;gap:12px}.emblem figcaption{width:auto;text-align:center;font-size:14px}.emblem figcaption .slogan-second{margin-top:2px}
+ .launch-dock{gap:20px;padding:24px;grid-template-columns:minmax(0,1fr) 150px}.launch-qr{padding-left:20px}.launch-qr img{width:130px!important;height:130px!important}
+ .launch-heading .launch-name{font-size:24px}.launch-meta{font-size:14px}.launch-clock{gap:8px}.clock-prefix,.clock-unit b{font-size:6.6vw}
+ .process{gap:16px}.process>div{gap:8px}.process>div+div{padding-left:16px}.process p{font-size:13px}.process small{font-size:12px}.edition{display:none}
+}
+@media(max-width:650px){
+ .header{height:84px;gap:16px;min-height:0}.tec-brand{padding:12px 0}.tec-brand img{width:150px;max-height:56px}.institution{font-size:16px;max-width:110px}
+ .hero{grid-template-columns:1fr;gap:28px;padding:28px 0 0}.copy{align-items:center}.process-headline{font-size:clamp(38px,10.5vw,66px);text-align:center;align-items:center;line-height:1.05}
+ .emblem{flex-direction:row;justify-content:center;gap:20px}.emblem .logo-rotator{width:120px}.emblem figcaption{max-width:170px;text-align:left;font-size:14px}
+ .launch-navigation{margin-bottom:12px}.launch-navigation button{height:44px}.launch-dock{grid-template-columns:1fr;gap:20px;padding:20px 16px;border-radius:12px}
+ .launch-heading{flex-direction:column-reverse;align-items:flex-start;gap:16px;margin-bottom:20px;padding-bottom:18px}.launch-heading .launch-name{font-size:26px;text-align:left}.launch-meta{align-items:flex-start;font-size:14px;gap:6px}.launch-meta p{justify-content:flex-start}
+ .launch-clock{grid-template-columns:.65fr repeat(4,1fr);gap:6px}.clock-prefix,.clock-unit b{font-size:clamp(26px,8.2vw,49px);line-height:1.1}.launch-dock .clock-prefix{display:block;padding:0}.launch-dock .clock-unit b{font-size:clamp(26px,8.2vw,49px)}
+ .clock-unit{gap:10px}.clock-unit small{font-size:10px;letter-spacing:.06em}.mission-time-note{font-size:12px;margin-top:20px}
+ .launch-qr{flex-direction:row;border-left:0;border-top:1px solid var(--edge);padding:20px 0 0;gap:20px;justify-content:flex-start}.launch-qr img{width:104px!important;height:104px!important}.launch-qr span{font-size:12px;margin:0;text-align:left}
+ .process{grid-template-columns:1fr 1fr;gap:22px 16px;padding:28px 0}.process>div+div{padding-left:0;border-left:0}.process p{font-size:13px}.process small{font-size:12px}
+ footer{flex-direction:column;align-items:center;gap:12px;padding:20px 0 76px;font-size:11px}.groups{gap:20px}.groups .group-trigger{padding:12px 2px}
+}
