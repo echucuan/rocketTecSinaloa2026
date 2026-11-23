@@ -1,8 +1,9 @@
 'use strict';
 const config = window.ROCKET_TEC || {};
-if (typeof config.etiqueta === 'string') document.getElementById('message-label').textContent = config.etiqueta;
-if (typeof config.mensaje === 'string') {
-  const message = document.getElementById('message-text');
+const messageLabel = document.getElementById('message-label');
+const message = document.getElementById('message-text');
+if (messageLabel && typeof config.etiqueta === 'string') messageLabel.textContent = config.etiqueta;
+if (message && typeof config.mensaje === 'string') {
   message.textContent = config.mensaje;
   message.style.whiteSpace = 'pre-line';
 }
