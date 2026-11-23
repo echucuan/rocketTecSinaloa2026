@@ -14,6 +14,9 @@ const expected = {
   'BETA-2': ['2026-11-27T08:00:00-07:00', '2026-11-27T12:00:00-07:00', '27 de noviembre']
 };
 
+const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+assert.match(home, /config\.js\?v=20261123-beta/, 'la portada debe invalidar la configuración anterior en caché');
+
 for (const [name, [start, end, dateLabel]] of Object.entries(expected)) {
   const launch = context.window.ROCKET_WINDOWS.find(item => item.nombre === name);
   assert.ok(launch, `${name} debe estar configurada`);
