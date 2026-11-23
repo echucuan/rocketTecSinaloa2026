@@ -5,3 +5,15 @@ button:disabled{opacity:.45;cursor:default}
 .team-identity{display:flex;align-items:center;gap:20px;padding:18px;margin:24px 0;background:#f1f6fc;border:1px solid #d9e3ef;border-radius:8px}
 .team-identity img{width:96px;height:96px;object-fit:contain;flex-shrink:0}.team-identity>div{min-width:0}.team-identity strong{font-size:22px;overflow-wrap:anywhere}.team-identity p{font-size:13px;color:#526b84;margin:6px 0}
 @media(max-width:500px){.team-identity{gap:14px;padding:14px}.team-identity img{width:72px;height:72px}.team-identity strong{font-size:19px}}
+
+/* Bandeja local de revisión */
+.review-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px solid #d9e3ef}
+.save-status{font-size:13px;color:#345d31;line-height:1.4}
+.saved-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.saved-heading h2{margin-top:4px}.saved-heading .hint{max-width:620px;margin-bottom:0}
+.saved-list{display:grid;gap:12px;margin-top:20px}
+.saved-card{display:flex;justify-content:space-between;align-items:center;gap:22px;padding:18px;border:1px solid #cbd9e8;border-radius:8px;background:#f8fbff}
+.saved-card>div:first-child{min-width:0}.saved-card strong{font-size:18px;overflow-wrap:anywhere}.saved-card p{margin:4px 0;font-size:14px;color:#34506c}.saved-card small{margin:0}
+.saved-card-actions{display:flex;gap:8px;flex-wrap:wrap;flex-shrink:0}.saved-card-actions button{padding:9px 12px;font-size:13px}
+.saved-empty{padding:20px;border:1px dashed #b9cadd;border-radius:8px;color:#5d7288;text-align:center}
+@media(max-width:700px){.saved-heading,.saved-card{display:block}.saved-heading .pill{margin-top:10px}.saved-card-actions{margin-top:16px}.review-actions button{width:100%}}
