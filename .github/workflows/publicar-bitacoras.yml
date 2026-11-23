@@ -1,0 +1,55 @@
+name: Publicar bitacoras
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'bitacoras/entradas/*.zip'
+      - 'bitacoras/entradas/**/*.zip'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar-bitacoras
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validar y publicar ZIP
+        run: node scripts/publicar-bitacoras.cjs
+
+      - name: Ejecutar pruebas
+        run: |
+          node scripts/probar-publicador.cjs
+          node scripts/probar-publicador-integracion.cjs
+
+      - name: Comprobar archivos
+        run: git diff --check
+
+      - name: Guardar publicaciones
+        shell: bash
+        run: |
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "No hay publicaciones nuevas."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A bitacoras/entradas bitacoras/publicadas
+          git commit -m "Publica bitacoras recibidas [skip ci]"
+          git push
