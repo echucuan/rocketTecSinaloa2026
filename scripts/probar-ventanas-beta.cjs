@@ -16,6 +16,7 @@ const expected = {
 
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.match(home, /config\.js\?v=20261123-beta/, 'la portada debe invalidar la configuración anterior en caché');
+assert.match(home, /screen\.css\?v=20261123-tv1/, 'la portada debe cargar el contador ampliado para televisión');
 
 for (const [name, [start, end, dateLabel]] of Object.entries(expected)) {
   const launch = context.window.ROCKET_WINDOWS.find(item => item.nombre === name);

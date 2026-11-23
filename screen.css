@@ -16,6 +16,7 @@ body{font-family:'Neue Haas Tec',Arial,sans-serif}
 .emblem figcaption:after{content:'';display:block;width:44px;height:2px;background:#6ebaff;margin:14px auto 0}
 .launch-name,.launch-schedule,.launch-qr span,.clock-unit small{font-family:'Neue Haas Tec',Arial,sans-serif}
 @media(min-width:901px) and (min-aspect-ratio:4/3){
+ .launch-carousel{max-width:min(44vw,90svh,920px)}
  .page{height:100svh;min-height:0;display:grid;grid-template-rows:12svh minmax(0,1fr) 6svh;padding:0 4vw}
  .header{height:auto;min-height:0;max-height:none}
  .tec-brand{padding:1.2svh 1.2vw}.tec-brand img{width:15vw;max-height:8svh;object-position:left center}
@@ -31,17 +32,17 @@ body{font-family:'Neue Haas Tec',Arial,sans-serif}
  .emblem:before{inset:-10% -12% 24%;filter:blur(58px);opacity:1}
  .emblem figcaption{width:min(18.4vw,24svh);font-size:min(1.05vw,1.8svh);margin:1svh 0 0;line-height:1.25}
  .emblem figcaption:after{margin:1.2svh auto 0}
- .launch-dock{gap:1vw;margin-top:1.8svh;width:100%;max-width:660px}
- .launch-dock .launch-window{padding:1.2svh .9vw;max-width:none}
- .launch-name{font-size:min(.65vw,1.25svh);letter-spacing:.09em}.launch-name strong{font-size:1.6em}
- .launch-schedule{font-size:min(.68vw,1.3svh);margin:.7svh 0}
- .launch-status{font-size:min(.65vw,1.2svh);margin:1svh 0 .4svh}
- .launch-clock{margin-top:.6svh;gap:.4vw}
- .clock-prefix{font-size:min(.95vw,1.8svh);min-width:1.5vw;padding-top:1svh}
- .clock-unit{gap:.5svh}.clock-unit b{font-size:min(2.5vw,4.5svh);padding:.6svh 2px}
- .clock-unit small{font-size:min(.52vw,1svh)}
- .launch-qr{flex-basis:min(8vw,14svh)}
- .launch-qr img{width:min(8vw,14svh)!important;height:min(8vw,14svh)!important}
+ .launch-dock{gap:1.2vw;margin-top:1.8svh;width:100%;max-width:none}
+ .launch-dock .launch-window{padding:1.4svh 1.1vw;max-width:none;box-shadow:0 15px 42px rgba(0,8,28,.38),inset 0 0 28px rgba(66,145,235,.08)}
+ .launch-name{font-size:min(.76vw,1.45svh);letter-spacing:.09em}.launch-name strong{font-size:1.7em}
+ .launch-schedule{font-size:min(.8vw,1.5svh);margin:.8svh 0}
+ .launch-status{font-size:min(.76vw,1.4svh);margin:1.1svh 0 .5svh}
+ .launch-clock{margin-top:.7svh;gap:.5vw}
+ .clock-prefix{font-size:min(1.2vw,2.2svh);min-width:1.8vw;padding-top:1.3svh}
+ .clock-unit{gap:.55svh}.clock-unit b{font-size:min(3.7vw,6.6svh);font-weight:700;padding:.7svh 2px;color:#fff;text-shadow:0 0 18px rgba(100,178,255,.48);background:rgba(104,164,232,.12);border-color:rgba(148,201,255,.42)}
+ .clock-unit small{font-size:min(.64vw,1.2svh);font-weight:700;color:#c8ddf7}
+ .launch-qr{flex-basis:min(9vw,16svh)}
+ .launch-qr img{width:min(9vw,16svh)!important;height:min(9vw,16svh)!important}
  .launch-qr span{font-size:min(.5vw,.95svh);margin-top:.6svh;line-height:1.4}
  .process{min-height:0;padding:1.5svh 1.2vw;align-items:center}
  .process p{font-size:min(.95vw,1.8svh)}.process small{font-size:min(.77vw,1.4svh)}
