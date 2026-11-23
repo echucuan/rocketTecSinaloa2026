@@ -87,9 +87,10 @@ function updateLaunchCountdown(now = Date.now()) {
   }
   panel.querySelector('.launch-code').textContent = launch.nombre;
   panel.setAttribute('aria-label', 'Ventana de lanzamiento ' + launch.nombre);
-  const dateFormat = new Intl.DateTimeFormat('es-MX',{timeZone:'America/Mazatlan',day:'numeric',month:'short'});
+  const dateFormat = new Intl.DateTimeFormat('es-MX',{timeZone:'America/Mazatlan',day:'numeric',month:'short',year:'numeric'});
   const timeFormat = new Intl.DateTimeFormat('es-MX',{timeZone:'America/Mazatlan',hour:'numeric',minute:'2-digit'});
-  panel.querySelector('.launch-schedule').textContent = `${dateFormat.format(launchStart)} · ${timeFormat.format(launchStart)} – ${timeFormat.format(launchEnd)} · Sinaloa`;
+  panel.querySelector('#launch-date').textContent = dateFormat.format(launchStart);
+  panel.querySelector('#launch-time').textContent = `${timeFormat.format(launchStart)} - ${timeFormat.format(launchEnd)} · Sinaloa`;
   const open = now >= launchStart && now < launchEnd;
   const closed = now >= launchEnd;
   panel.classList.toggle('is-open', open);

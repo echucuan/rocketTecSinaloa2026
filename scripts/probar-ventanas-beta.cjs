@@ -16,12 +16,13 @@ const expected = {
 
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.match(home, /config\.js\?v=20261123-beta/, 'la portada debe invalidar la configuración anterior en caché');
-assert.match(home, /screen\.css\?v=20261123-tv11/, 'la portada debe mostrar MISIÓN y BETA juntos en el encabezado');
+assert.match(home, /screen\.css\?v=20261123-tv12/, 'la portada debe mostrar fecha y hora a la izquierda y la misión a la derecha');
 assert.doesNotMatch(home, /NUESTRA MISIÓN|Diseñar, construir y poner a prueba/, 'la portada no debe mostrar la leyenda de misión');
-assert.match(home, /app\.js\?v=20261123-tv5/, 'la portada debe cargar el script compatible con el nuevo encabezado');
+assert.match(home, /app\.js\?v=20261123-tv7/, 'la portada debe cargar fecha y hora separadas en el encabezado');
 assert.doesNotMatch(fs.readFileSync(path.join(root, 'app.js'), 'utf8'), /: 'APERTURA EN'/, 'el contador pendiente no debe mostrar APERTURA EN');
 assert.doesNotMatch(home, /Una idea se convierte|INGENIERÍA EN ACCIÓN/, 'la portada debe dejar solo el titular en la columna izquierda');
 assert.match(home, /class="launch-heading"[\s\S]*class="launch-code"/, 'el contador debe presentar un encabezado de misión jerarquizado');
+assert.match(home, /id="launch-date"[\s\S]*id="launch-time"/, 'el encabezado debe separar FECHA y HORA');
 
 for (const [name, [start, end, dateLabel]] of Object.entries(expected)) {
   const launch = context.window.ROCKET_WINDOWS.find(item => item.nombre === name);
