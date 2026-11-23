@@ -16,7 +16,7 @@ const expected = {
 
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.match(home, /config\.js\?v=20261123-beta/, 'la portada debe invalidar la configuración anterior en caché');
-assert.match(home, /screen\.css\?v=20261123-tv5/, 'la portada debe cargar el encabezado de control para televisión');
+assert.match(home, /screen\.css\?v=20261123-tv7/, 'la portada debe cargar T menos ampliada y la placa de misión destacada');
 assert.doesNotMatch(home, /NUESTRA MISIÓN|Diseñar, construir y poner a prueba/, 'la portada no debe mostrar la leyenda de misión');
 assert.match(home, /app\.js\?v=20261123-tv5/, 'la portada debe cargar el script compatible con el nuevo encabezado');
 assert.doesNotMatch(fs.readFileSync(path.join(root, 'app.js'), 'utf8'), /: 'APERTURA EN'/, 'el contador pendiente no debe mostrar APERTURA EN');
