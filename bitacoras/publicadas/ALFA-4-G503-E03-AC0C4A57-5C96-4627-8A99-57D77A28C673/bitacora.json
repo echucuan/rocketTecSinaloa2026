@@ -1,0 +1,26 @@
+{
+  "schema": "rocket-tec-bitacora/1",
+  "id": "ac0c4a57-5c96-4627-8a99-57d77a28c673",
+  "folio": "ALFA-4-G503-E03-Rac0c4a57-5c96-4627-8a99-57d77a28c673",
+  "campus": "Sinaloa",
+  "ventana": "ALFA-4",
+  "creada": "2026-11-14T03:42:07.608Z",
+  "actualizada": "2026-11-14T03:46:00.403Z",
+  "datos": {
+    "grupo": "503",
+    "equipo": "03",
+    "fecha": "2026-11-13",
+    "hora": "08:30",
+    "version": "PLA",
+    "masa": "65.37",
+    "motor": "Estes A10-3T",
+    "motores_restantes": "2",
+    "resultado": "Encendió, pero no salió de la base",
+    "recuperacion": "Recuperado completo",
+    "observaciones": "El cohete despego correctamente, pero en el despegue se desvió para un lado por la inestabilidad entre los centros de presión y masas, en la recuperación no hubo problemas, ya que cayó cerca. Los daños fueron que se quemó el paracaídas en parte superior.",
+    "nombre_equipo": "PROXIMA CENTAURI",
+    "autorizacion_foto": "Confirmada por quien elaboró la bitácora"
+  },
+  "foto": "foto-grupal.jpg",
+  "logo": "logo-equipo.png"
+}

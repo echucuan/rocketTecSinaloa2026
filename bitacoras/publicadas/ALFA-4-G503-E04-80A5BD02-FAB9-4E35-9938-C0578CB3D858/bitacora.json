@@ -1,0 +1,29 @@
+{
+  "schema": "rocket-tec-bitacora/1",
+  "id": "80a5bd02-fab9-4e35-9938-c0578cb3d858",
+  "folio": "ALFA-4-G503-E04-R80a5bd02-fab9-4e35-9938-c0578cb3d858",
+  "campus": "Sinaloa",
+  "ventana": "ALFA-4",
+  "creada": "2026-11-13T16:16:23.109Z",
+  "actualizada": "2026-11-13T17:49:55.972Z",
+  "datos": {
+    "grupo": "503",
+    "equipo": "04",
+    "fecha": "2026-11-13",
+    "hora": "08:14",
+    "version": "PLA",
+    "masa": "60.3",
+    "motor": "Estes A10-3T",
+    "motores_restantes": "2",
+    "resultado": "Encendió y salió de la base",
+    "recuperacion": "Recuperado parcialmente",
+    "trayectoria": "Presentó giros u oscilaciones",
+    "paracaidas": "No se desplegó",
+    "sensor": "No se utilizó sensor",
+    "observaciones": "El cohete careció de un movimiento recto, de estabilidad y de altura, lo que resultó en que, la segunda explosión, la encargada de desplegar el paracaídas, se realizó en el suelo, evitando el despliegue del paracaídas en el aire. Asimismo, al no utilizar un papel protector dentro del cohete, esto resultó en el derretimiento de partes del paracaídas, y el cuerpo quedo un tanto dañado al no ser los suficientemente resistente.",
+    "nombre_equipo": "REGULUS",
+    "autorizacion_foto": "Confirmada por quien elaboró la bitácora"
+  },
+  "foto": "foto-grupal.jpg",
+  "logo": "logo-equipo.png"
+}

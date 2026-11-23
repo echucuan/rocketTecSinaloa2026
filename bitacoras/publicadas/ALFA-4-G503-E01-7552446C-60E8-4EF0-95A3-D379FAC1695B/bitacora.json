@@ -1,0 +1,29 @@
+{
+  "schema": "rocket-tec-bitacora/1",
+  "id": "7552446c-60e8-4ef0-95a3-d379fac1695b",
+  "folio": "ALFA-4-G503-E01-R7552446c-60e8-4ef0-95a3-d379fac1695b",
+  "campus": "Sinaloa",
+  "ventana": "ALFA-4",
+  "creada": "2026-11-13T17:00:17.392Z",
+  "actualizada": "2026-11-13T17:46:03.217Z",
+  "datos": {
+    "grupo": "503",
+    "equipo": "01",
+    "fecha": "2026-11-13",
+    "hora": "07:50",
+    "version": "PLA",
+    "masa": "",
+    "motor": "Estes A10-3T",
+    "motores_restantes": "3",
+    "resultado": "Encendió y salió de la base",
+    "recuperacion": "Recuperado parcialmente",
+    "trayectoria": "Presentó giros u oscilaciones",
+    "paracaidas": "Se desplegó parcialmente",
+    "sensor": "No se utilizó sensor",
+    "observaciones": "El cohete salio disparado con gran rapidez de forma recta por los primeros 12m aproximadamente, luego empezó a girar, dio una vuelta completa y finalmente otra media vuelta mientras disminuia su rapidez para empezar a apuntar hacia el suelo, cayendo el cohete y luego saliendo el paracaídas una vez ya en el suelo. El cohete no presentó daños, más el paracaídas se quemó, pegandose y creando hoyos en este.",
+    "nombre_equipo": "IMPULSE-X",
+    "autorizacion_foto": "Confirmada por quien elaboró la bitácora"
+  },
+  "foto": "foto-grupal.jpg",
+  "logo": "logo-equipo.png"
+}

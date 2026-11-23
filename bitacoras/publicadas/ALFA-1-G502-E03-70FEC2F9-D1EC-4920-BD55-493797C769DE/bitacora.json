@@ -1,0 +1,29 @@
+{
+  "schema": "rocket-tec-bitacora/1",
+  "id": "70fec2f9-d1ec-4920-bd55-493797c769de",
+  "folio": "ALFA-1-G502-E03-R70fec2f9-d1ec-4920-bd55-493797c769de",
+  "campus": "Sinaloa",
+  "ventana": "ALFA-1",
+  "creada": "2026-11-13T17:13:31.829Z",
+  "actualizada": "2026-11-13T18:27:21.050Z",
+  "datos": {
+    "grupo": "502",
+    "equipo": "03",
+    "fecha": "2026-11-10",
+    "hora": "09:15",
+    "version": "PLA",
+    "masa": "45.7",
+    "motor": "Estes A10-3T",
+    "motores_restantes": "2",
+    "resultado": "Encendió y salió de la base",
+    "recuperacion": "Recuperado completo",
+    "trayectoria": "Presentó giros u oscilaciones",
+    "paracaidas": "No pude observarlo",
+    "sensor": "Lectura no válida",
+    "observaciones": "El cohete se movió de forma errática y el sistema de recuperación sirvió pero ya en el suelo. ",
+    "nombre_equipo": "HAIL MARY",
+    "autorizacion_foto": "Confirmada por quien elaboró la bitácora"
+  },
+  "foto": "foto-grupal.jpg",
+  "logo": "logo-equipo.png"
+}

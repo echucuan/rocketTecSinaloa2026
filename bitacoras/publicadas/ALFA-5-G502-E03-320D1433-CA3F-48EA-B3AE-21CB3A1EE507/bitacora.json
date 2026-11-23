@@ -1,0 +1,31 @@
+{
+  "schema": "rocket-tec-bitacora/1",
+  "id": "320d1433-ca3f-48ea-b3ae-21cb3a1ee507",
+  "folio": "ALFA-5-G502-E03-R320d1433-ca3f-48ea-b3ae-21cb3a1ee507",
+  "campus": "Sinaloa",
+  "ventana": "ALFA-5",
+  "creada": "2026-11-13T18:30:21.487Z",
+  "actualizada": "2026-11-13T18:37:48.869Z",
+  "datos": {
+    "grupo": "502",
+    "equipo": "03",
+    "fecha": "2026-11-13",
+    "hora": "10:46",
+    "version": "PLA",
+    "masa": "57.8",
+    "motor": "Estes A10-3T",
+    "motores_restantes": "2",
+    "resultado": "Encendió y salió de la base",
+    "recuperacion": "Recuperado parcialmente",
+    "trayectoria": "Se desvió lateralmente",
+    "paracaidas": "No pude observarlo",
+    "sensor": "Sí",
+    "altura": "18",
+    "modelo_sensor": "Estes Altímetro",
+    "observaciones": "El cohete aceleró verticalmente, la velocidad cambió de dirección y dejó de ser completamente vertical a mitad del vuelo, lo que ocasionó que el cohete se desviara. La recuperación de la ojiva fue exitosa sin embargo el cuerpo del cohete se recuperó parcialmente (el cuerpo del cohete se quemó). ",
+    "nombre_equipo": "HAIL MARY",
+    "autorizacion_foto": "Confirmada por quien elaboró la bitácora"
+  },
+  "foto": "foto-grupal.jpg",
+  "logo": "logo-equipo.png"
+}
