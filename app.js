@@ -90,7 +90,7 @@ function updateLaunchCountdown(now = Date.now()) {
   const dateFormat = new Intl.DateTimeFormat('es-MX',{timeZone:'America/Mazatlan',day:'numeric',month:'short',year:'numeric'});
   const timeFormat = new Intl.DateTimeFormat('es-MX',{timeZone:'America/Mazatlan',hour:'numeric',minute:'2-digit'});
   panel.querySelector('#launch-date').textContent = dateFormat.format(launchStart);
-  panel.querySelector('#launch-time').textContent = `${timeFormat.format(launchStart)} - ${timeFormat.format(launchEnd)} · Sinaloa`;
+  panel.querySelector('#launch-time').textContent = `${timeFormat.format(launchStart)} - ${timeFormat.format(launchEnd)}`;
   const open = now >= launchStart && now < launchEnd;
   const closed = now >= launchEnd;
   panel.classList.toggle('is-open', open);

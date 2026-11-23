@@ -16,13 +16,14 @@ const expected = {
 
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.match(home, /config\.js\?v=20261123-beta/, 'la portada debe invalidar la configuración anterior en caché');
-assert.match(home, /screen\.css\?v=20261123-tv12/, 'la portada debe mostrar fecha y hora a la izquierda y la misión a la derecha');
+assert.match(home, /screen\.css\?v=20261123-tv13/, 'la portada debe mostrar la misión como una sola pieza tipográfica');
 assert.doesNotMatch(home, /NUESTRA MISIÓN|Diseñar, construir y poner a prueba/, 'la portada no debe mostrar la leyenda de misión');
-assert.match(home, /app\.js\?v=20261123-tv7/, 'la portada debe cargar fecha y hora separadas en el encabezado');
+assert.match(home, /app\.js\?v=20261123-tv8/, 'la portada debe cargar fecha y hora separadas sin ubicación en el horario');
 assert.doesNotMatch(fs.readFileSync(path.join(root, 'app.js'), 'utf8'), /: 'APERTURA EN'/, 'el contador pendiente no debe mostrar APERTURA EN');
 assert.doesNotMatch(home, /Una idea se convierte|INGENIERÍA EN ACCIÓN/, 'la portada debe dejar solo el titular en la columna izquierda');
 assert.match(home, /class="launch-heading"[\s\S]*class="launch-code"/, 'el contador debe presentar un encabezado de misión jerarquizado');
 assert.match(home, /id="launch-date"[\s\S]*id="launch-time"/, 'el encabezado debe separar FECHA y HORA');
+assert.match(home, /MISIÓN <span class="launch-code">ALFA-1<\/span>/, 'MISIÓN y el nombre deben usar el mismo renglón sin estilos heredados de strong');
 
 for (const [name, [start, end, dateLabel]] of Object.entries(expected)) {
   const launch = context.window.ROCKET_WINDOWS.find(item => item.nombre === name);
