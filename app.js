@@ -85,7 +85,7 @@ function updateLaunchCountdown(now = Date.now()) {
     qrLink.querySelector('img').src = launch.qr || 'assets/qr-ALFA-1.png';
     qrLink.querySelector('img').alt = 'QR de la página de '+launch.nombre;
   }
-  panel.querySelector('.launch-name strong').textContent = launch.nombre;
+  panel.querySelector('.launch-code').textContent = launch.nombre;
   panel.setAttribute('aria-label', 'Ventana de lanzamiento ' + launch.nombre);
   const dateFormat = new Intl.DateTimeFormat('es-MX',{timeZone:'America/Mazatlan',day:'numeric',month:'short'});
   const timeFormat = new Intl.DateTimeFormat('es-MX',{timeZone:'America/Mazatlan',hour:'numeric',minute:'2-digit'});
@@ -105,7 +105,7 @@ function updateLaunchCountdown(now = Date.now()) {
   }
   const note = document.getElementById('mission-time-note');
   const atZero = open && now - launchStart < 1000;
-  status.textContent = closed ? 'VENTANA FINALIZADA' : atZero ? 'T = 0 · APERTURA DE VENTANA' : open ? 'VENTANA ABIERTA · TIEMPO TRANSCURRIDO' : 'APERTURA EN';
+  status.textContent = closed ? 'VENTANA FINALIZADA' : atZero ? 'T = 0 · APERTURA DE VENTANA' : open ? 'VENTANA ABIERTA · TIEMPO TRANSCURRIDO' : '';
   if (note) {
     if (closed) note.textContent = 'T de referencia: apertura de la ventana.';
     else if (open) {

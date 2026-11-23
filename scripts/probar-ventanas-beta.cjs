@@ -16,9 +16,12 @@ const expected = {
 
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.match(home, /config\.js\?v=20261123-beta/, 'la portada debe invalidar la configuración anterior en caché');
-assert.match(home, /screen\.css\?v=20261123-tv2/, 'la portada debe cargar el contador de ancho completo para televisión');
+assert.match(home, /screen\.css\?v=20261123-tv5/, 'la portada debe cargar el encabezado de control para televisión');
 assert.doesNotMatch(home, /NUESTRA MISIÓN|Diseñar, construir y poner a prueba/, 'la portada no debe mostrar la leyenda de misión');
-assert.match(home, /app\.js\?v=20261123-tv3/, 'la portada debe cargar el script compatible sin la leyenda de misión');
+assert.match(home, /app\.js\?v=20261123-tv5/, 'la portada debe cargar el script compatible con el nuevo encabezado');
+assert.doesNotMatch(fs.readFileSync(path.join(root, 'app.js'), 'utf8'), /: 'APERTURA EN'/, 'el contador pendiente no debe mostrar APERTURA EN');
+assert.doesNotMatch(home, /Una idea se convierte|INGENIERÍA EN ACCIÓN/, 'la portada debe dejar solo el titular en la columna izquierda');
+assert.match(home, /class="launch-heading"[\s\S]*class="launch-code"/, 'el contador debe presentar un encabezado de misión jerarquizado');
 
 for (const [name, [start, end, dateLabel]] of Object.entries(expected)) {
   const launch = context.window.ROCKET_WINDOWS.find(item => item.nombre === name);

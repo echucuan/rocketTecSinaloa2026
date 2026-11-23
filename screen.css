@@ -1,6 +1,7 @@
 /* Composición de pantalla de laboratorio, proporcional al área visible. */
 @font-face{font-family:'Neue Haas Tec';src:url('assets/tec-neue-haas-bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
 body{font-family:'Neue Haas Tec',Arial,sans-serif}
+.copy{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .launch-carousel{grid-column:1/-1;justify-self:center;width:100%;max-width:660px;margin-top:1.2svh;touch-action:pan-y}
 .launch-navigation{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px;color:#b8d7fc;font-size:11px;letter-spacing:.08em}
 .launch-navigation button{border:1px solid #4776a1;background:#0b284d;color:#fff;width:32px;height:25px;cursor:pointer;border-radius:2px;font-size:19px;line-height:1}
@@ -8,6 +9,13 @@ body{font-family:'Neue Haas Tec',Arial,sans-serif}
 .launch-carousel .launch-dock{margin-top:0}
 @media(min-width:901px) and (min-aspect-ratio:4/3){.launch-navigation{font-size:min(.6vw,1.1svh);margin-bottom:.5svh}.launch-navigation button{height:2.8svh;width:2.5vw;font-size:1.7svh}.launch-carousel .launch-dock{margin-top:0}.emblem>img{width:min(23vw,28svh)}}
 .mission-time-note{font-family:'Neue Haas Tec',Arial,sans-serif;font-size:clamp(9px,.62vw,17px);line-height:1.4;color:#c2d8ef;text-align:left;margin:8px 0 0}
+.launch-status:empty{display:none}
+.launch-heading{display:flex;align-items:stretch;justify-content:space-between;gap:18px;margin:-14px -12px 10px;padding:12px 14px 11px;background:linear-gradient(90deg,rgba(17,55,101,.82),rgba(5,25,53,.5));border-bottom:1px solid rgba(126,190,255,.5);position:relative}
+.launch-heading:before{content:'';position:absolute;left:0;top:0;width:36%;height:2px;background:linear-gradient(90deg,#61afff,transparent);box-shadow:0 0 12px rgba(97,175,255,.7)}
+.launch-heading-copy{display:flex;min-width:0;flex-direction:column;justify-content:center;align-items:flex-start}
+.launch-heading .launch-name{display:block;margin:0;color:#d8e9fc;font-weight:700;text-align:left}
+.launch-heading .launch-schedule{margin:5px 0 0;color:#a9c8e9;font-family:monospace;font-weight:700;text-align:left}
+.launch-code{display:flex;align-items:center;justify-content:center;align-self:stretch;min-width:112px;padding:0 15px;border:1px solid rgba(121,186,255,.55);border-right:3px solid #79baff;background:linear-gradient(135deg,rgba(62,137,224,.2),rgba(12,42,79,.55));color:#fff;font-size:clamp(24px,2vw,42px);letter-spacing:.08em;text-shadow:0 0 16px rgba(100,178,255,.45)}
 @media(min-width:901px) and (min-aspect-ratio:4/3){.mission-time-note{font-size:min(.6vw,1.1svh);margin-top:.7svh}.clock-prefix{white-space:nowrap}}
 .emblem:before{filter:blur(58px);background:radial-gradient(ellipse at 50% 30%,rgba(140,195,255,.48),rgba(91,157,237,.25) 42%,transparent 76%)}
 .emblem figcaption{font-family:'Neue Haas Tec',Arial,sans-serif;letter-spacing:-.02em;line-height:1.25;width:min(56vw,288px);font-size:clamp(12px,3.2vw,17px);font-weight:400;text-shadow:none;margin:12px 0 0;padding:0}
@@ -24,7 +32,6 @@ body{font-family:'Neue Haas Tec',Arial,sans-serif}
  main{min-height:0;display:grid;grid-template-rows:minmax(0,1fr) 10svh}
  .hero{min-height:0;grid-template-columns:1.03fr 1fr;grid-template-rows:minmax(0,1fr) auto;column-gap:4vw;row-gap:1svh;padding:1.2svh 1.2vw;align-items:center}
  h1{font-size:min(5.8vw,9.5svh);line-height:1.04}
- .eyebrow{font-size:min(.8vw,1.6svh);margin-bottom:2.5svh}
  .intro{font-size:min(1.3vw,2.4svh);margin:2.5svh 0 3svh}
  .message p{font-size:min(1.05vw,2svh)}.message-label{font-size:min(.7vw,1.3svh)}
  .emblem{margin:0;padding:0;min-height:0;align-self:center}
@@ -34,8 +41,10 @@ body{font-family:'Neue Haas Tec',Arial,sans-serif}
  .emblem figcaption:after{margin:1.2svh auto 0}
  .launch-dock{gap:1.2vw;margin-top:.7svh;width:100%;max-width:none}
  .launch-dock .launch-window{padding:1.2svh 1.3vw;max-width:none;box-shadow:0 15px 42px rgba(0,8,28,.38),inset 0 0 28px rgba(66,145,235,.08)}
- .launch-name{font-size:min(.82vw,1.55svh);letter-spacing:.09em}.launch-name strong{font-size:1.75em}
- .launch-schedule{font-size:min(.86vw,1.6svh);margin:.65svh 0}
+ .launch-heading{margin:-1.2svh -1.3vw .75svh;padding:1svh 1.15vw .9svh}
+ .launch-name{font-size:min(.82vw,1.55svh);letter-spacing:.12em}
+ .launch-schedule{font-size:min(.78vw,1.45svh)}
+ .launch-code{min-width:min(10.5vw,19svh);font-size:min(2vw,3.7svh);padding:0 1vw}
  .launch-status{font-size:min(.8vw,1.5svh);margin:.8svh 0 .35svh}
  .launch-clock{margin-top:.45svh;gap:.75vw}
  .clock-prefix{font-size:min(1.5vw,2.7svh);min-width:2.4vw;padding-top:1.55svh}
