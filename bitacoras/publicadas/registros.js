@@ -1,4 +1,4 @@
-// Archivo actualizado automáticamente al procesar los ZIP de bitacoras/entradas/.
+// Archivo actualizado autom�ticamente al procesar los ZIP de bitacoras/entradas/.
 (function(root){
   const registros=[
   {
@@ -10,8 +10,8 @@
     "fecha": "2026-11-10",
     "hora": "09:15",
     "prueba": false,
-    "resultado": "Encendió y salió de la base",
-    "trayectoria": "Presentó giros u oscilaciones",
+    "resultado": "Encendi� y sali� de la base",
+    "trayectoria": "Present� giros u oscilaciones",
     "pagina": "publicadas/ALFA-1-G502-E03-70FEC2F9-D1EC-4920-BD55-493797C769DE/index.html",
     "archivo_sha256": "12ee141870d0d60f8afa77c7f635b9f41d8e6892308a5a360efdd50c59631b7a"
   },
@@ -24,8 +24,8 @@
     "fecha": "2026-11-11",
     "hora": "21:50",
     "prueba": true,
-    "resultado": "Encendió y salió de la base",
-    "trayectoria": "Se desvió lateralmente",
+    "resultado": "Encendi� y sali� de la base",
+    "trayectoria": "Se desvi� lateralmente",
     "pagina": "publicadas/ALFA-2-G502-E03-PRUEBA/index.html"
   },
   {
@@ -37,8 +37,8 @@
     "fecha": "2026-11-12",
     "hora": "21:41",
     "prueba": false,
-    "resultado": "Encendió y salió de la base",
-    "trayectoria": "Presentó giros u oscilaciones",
+    "resultado": "Encendi� y sali� de la base",
+    "trayectoria": "Present� giros u oscilaciones",
     "pagina": "publicadas/ALFA-4-G502-E03-B48D2AAC-E5B0-42D7-800A-05324F683BF7/index.html",
     "archivo_sha256": "9e90b17d91e1f51bf473ffce9a58cf7c6e54a2e39c3a6decd9755241bc93ad8b"
   },
@@ -51,8 +51,8 @@
     "fecha": "2026-11-13",
     "hora": "07:50",
     "prueba": false,
-    "resultado": "Encendió y salió de la base",
-    "trayectoria": "Presentó giros u oscilaciones",
+    "resultado": "Encendi� y sali� de la base",
+    "trayectoria": "Present� giros u oscilaciones",
     "pagina": "publicadas/ALFA-4-G503-E01-7552446C-60E8-4EF0-95A3-D379FAC1695B/index.html",
     "archivo_sha256": "d32182eb6e901916ca135db4fc6dbde1dd9e0a387595182a1c11428d32e5934d"
   },
@@ -65,7 +65,7 @@
     "fecha": "2026-11-13",
     "hora": "07:57",
     "prueba": false,
-    "resultado": "Encendió y salió de la base",
+    "resultado": "Encendi� y sali� de la base",
     "trayectoria": "Principalmente vertical",
     "pagina": "publicadas/ALFA-4-G503-E02-AA8DCCE8-0B7D-4532-B645-124CFBEEB200/index.html",
     "archivo_sha256": "6b9e6cf1449699ba89f79505a72fddeb63b88ef706383c4509eb9ebc71f01f41"
@@ -79,8 +79,8 @@
     "fecha": "2026-11-13",
     "hora": "08:14",
     "prueba": false,
-    "resultado": "Encendió y salió de la base",
-    "trayectoria": "Presentó giros u oscilaciones",
+    "resultado": "Encendi� y sali� de la base",
+    "trayectoria": "Present� giros u oscilaciones",
     "pagina": "publicadas/ALFA-4-G503-E04-80A5BD02-FAB9-4E35-9938-C0578CB3D858/index.html",
     "archivo_sha256": "13c628747381711cca9197cbb4e7e0307b11e1d72f5be3a86b27a230395cfa06"
   },
@@ -93,7 +93,7 @@
     "fecha": "2026-11-13",
     "hora": "08:30",
     "prueba": false,
-    "resultado": "Encendió, pero no salió de la base",
+    "resultado": "Encendi�, pero no sali� de la base",
     "trayectoria": "Trayectoria no declarada",
     "pagina": "publicadas/ALFA-4-G503-E03-AC0C4A57-5C96-4627-8A99-57D77A28C673/index.html",
     "archivo_sha256": "eae4f4a5a415caebecc950cd0e12a9ad4d2e97d662f909914ecd2c88ec4e604d"
@@ -107,10 +107,24 @@
     "fecha": "2026-11-13",
     "hora": "10:46",
     "prueba": false,
-    "resultado": "Encendió y salió de la base",
-    "trayectoria": "Se desvió lateralmente",
+    "resultado": "Encendi� y sali� de la base",
+    "trayectoria": "Se desvi� lateralmente",
     "pagina": "publicadas/ALFA-5-G502-E03-320D1433-CA3F-48EA-B3AE-21CB3A1EE507/index.html",
     "archivo_sha256": "6bdeab31120fa6f8e36bf0b5bdb859db7dd1f902c2c4d723849a61b61ef1569a"
+  },
+  {
+    "id": "9fd9ab86-3451-499c-bf1f-d9b5ba14ede6",
+    "ventana": "BETA-1",
+    "grupo": "502",
+    "equipo": "02",
+    "nombre": "WAN HU 67",
+    "fecha": "2026-11-25",
+    "hora": "10:15",
+    "prueba": false,
+    "resultado": "Encendi� y sali� de la base",
+    "trayectoria": "Se desvi� lateralmente",
+    "pagina": "publicadas/BETA-1-G502-E02-9FD9AB86-3451-499C-BF1F-D9B5BA14EDE6/index.html",
+    "archivo_sha256": "7396598d0ec3fd82176a4350e8eb2d22177fc3d12b8ba9096fc98fbd04ed70f0"
   }
 ];
   root.ROCKET_FLIGHTS=registros;
